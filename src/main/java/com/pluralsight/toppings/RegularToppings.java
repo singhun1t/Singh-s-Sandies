@@ -18,6 +18,6 @@ public class RegularToppings extends Toppings{
 
     @Override
     public double getPricebySize(String size) {
-        return 0.0;
+        return price;
     }
 }

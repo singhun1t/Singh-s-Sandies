@@ -58,12 +58,18 @@ public class Receipt {
         return stringBuilder.toString();
     }
     public void saveReceipt() throws IOException{
-        File receiptFilePath = new File("receipts");
-        if (!receiptFilePath.exists()){
-            throw new IOException("Receipt file path does not exist");
-
-            }
+        int fileCount = 1;
+        String uniqueFile = file;
+        File receiptFile = new File("receipts",uniqueFile);
+        while (receiptFile.exists()){
+            uniqueFile = String.format("%s_%d.txt",file.replace(".txt"," "),fileCount);
+            receiptFile = new File("receipts", uniqueFile);
+            fileCount ++;
+        }
+        try(FileWriter fileWriter = new FileWriter(receiptFile)){
+            fileWriter.write(generateReceipt());
+        }
         }
 
     }
-}
+
