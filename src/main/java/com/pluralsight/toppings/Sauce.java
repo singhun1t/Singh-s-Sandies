@@ -8,7 +8,7 @@ public class Sauce extends RegularToppings{
             .toList();
 
     public Sauce(String name) {
-        super(name, 0.0);
+        super(name,0.0);
         if(!sauces.contains(name)){
             throw new IllegalArgumentException("Bread type does not match available sauces");
         }

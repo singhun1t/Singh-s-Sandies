@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Sandwich implements Orderable {
-    public List<String> breadTypes = Arrays.asList("white", "Wheat", "Rye", "Wrap");
+    public static final List<String> breadTypes = Arrays.asList("white", "Wheat", "Rye", "Wrap");
 
 
     String size;

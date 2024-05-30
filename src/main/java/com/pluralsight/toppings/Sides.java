@@ -8,7 +8,7 @@ public class Sides extends RegularToppings{
             .toList();
 
     public Sides(String name, double price) {
-        super(name, 0.0);
+        super(name,0.0);
 
         if(!sides.contains(name)){
             throw new IllegalArgumentException("Side does not exist");

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class RegularToppings extends Toppings{
-    private final List<String> vegetables = Stream.of("lettuce","peppers","onions","tomatoes","jalapenos","cucumbers","pickles","guacamole","mushrooms")
+    public static List<String> vegetables = Stream.of("lettuce","peppers","onions","tomatoes","jalapenos","cucumbers","pickles","guacamole","mushrooms")
             .toList();
 
 
@@ -20,4 +20,9 @@ public class RegularToppings extends Toppings{
     public double getPricebySize(String size) {
         return price;
     }
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }

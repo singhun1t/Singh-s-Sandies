@@ -17,7 +17,7 @@ public abstract class PremiumToppings extends Toppings {
     private static final double smallExtraCheese = 0.30;
     private static final double mediumExtracheese = 0.60;
     private static final double largeExtraCheese = 0.90;
-    public PremiumToppings(String name, double price, boolean isExtra) {
+    public PremiumToppings(String name, boolean isExtra) {
         super(name, 0.0);
         this.isExtra = isExtra;
     }
@@ -40,8 +40,7 @@ public abstract class PremiumToppings extends Toppings {
                     extraCharge = smallExtraCheese;
                 }
             }
-        }
-        if(size.equalsIgnoreCase("medium")){
+        }else if(size.equalsIgnoreCase("medium")){
             if(this instanceof Meat){
                 sizeCharge = mediumMeat;
                 if(isExtra){
@@ -54,8 +53,7 @@ public abstract class PremiumToppings extends Toppings {
                     extraCharge = mediumExtracheese;
                 }
             }
-        }
-        if(size.equalsIgnoreCase("large")){
+        }else if(size.equalsIgnoreCase("large")){
             if(this instanceof Meat){
                 sizeCharge = largeMeat;
                 if(isExtra){
@@ -74,6 +72,10 @@ public abstract class PremiumToppings extends Toppings {
         return sizeCharge + extraCharge;
 
 
+    }
+    @Override
+    public String toString() {
+        return (isExtra ? "Extra " : "") + name;
     }
 
 
