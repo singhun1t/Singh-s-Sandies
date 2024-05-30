@@ -36,18 +36,24 @@ public class Receipt {
         if (!order.getSandwiches().isEmpty()) {
             stringBuilder.append("\n Sandwiches \n");
             for (Sandwich sandwich : order.getSandwiches()) {
+
                 stringBuilder.append(sandwich.getDetails()).append(" $").append(String.format("%.2f", sandwich.getPrice())).append("\n ");
             }
         }
         if(!order.getDrinks().isEmpty()){
+
             stringBuilder.append("\n Drinks \n");
+
             for (Drink drink : order.getDrinks()) {
+
                 stringBuilder.append(drink.getDetails()).append(" $").append(String.format("%.2f", drink.getPrice())).append("\n ");
 
             }
         }
         if(!order.getChips().isEmpty()){
+
             stringBuilder.append("\n Chips \n");
+
             for (Chips chip : order.getChips()) {
                 stringBuilder.append(chip.getDetails()).append(" $").append(String.format("%.2f", chip.getPrice())).append("\n ");
             }
