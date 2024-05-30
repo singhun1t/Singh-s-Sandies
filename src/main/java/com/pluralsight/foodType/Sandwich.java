@@ -48,7 +48,7 @@ public class Sandwich implements Orderable {
        // String details = " ";
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(size.charAt(0)).append(size.substring(1)).append(" ").append(breadType).append("sandwich");
+        stringBuilder.append(size.charAt(0)).append(size.substring(1)).append(" ").append(breadType).append(" sandwich");
         if(isToasted){
             stringBuilder.append(" Toasted");
         }
@@ -56,24 +56,14 @@ public class Sandwich implements Orderable {
             stringBuilder.append("\n Toppings: ");
             for (Toppings topping : toppings) {
                 stringBuilder.append(topping.toString());
+                stringBuilder.append("\n");
             }
         }
         return stringBuilder.toString();
     }
 
-    public List<String> getBreadTypes() {
-        return breadTypes;
-    }
 
-    public void addTopping(Toppings topping){
-        if(topping!= null){
-            toppings.add(topping);
-        }
-    }
 
-    public void removeTopping(Toppings topping){
-        toppings.remove(topping);
-    }
     @Override
     public double getPrice() {
         double totalPrice = 0.0;

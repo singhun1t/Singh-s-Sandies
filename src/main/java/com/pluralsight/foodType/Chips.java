@@ -22,7 +22,7 @@ public class Chips implements Orderable {
     }
 
     public String getDetails(){
-        return String.format("%s chips " + flavor);
+        return flavor + "chips";
     }
 
 

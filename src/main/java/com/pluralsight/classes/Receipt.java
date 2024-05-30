@@ -30,8 +30,8 @@ public class Receipt {
     public String generateReceipt() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Receipt for Singh's Sandies");
-        stringBuilder.append("===========================");
-        stringBuilder.append("Customer: ").append(order.getCustomer().getName()).append("\n");
+        stringBuilder.append("\n===========================");
+        stringBuilder.append("\n Customer: ").append(order.getCustomer().getName()).append("\n");
 
         if (!order.getSandwiches().isEmpty()) {
             stringBuilder.append("\n Sandwiches \n");
@@ -43,6 +43,7 @@ public class Receipt {
             stringBuilder.append("\n Drinks \n");
             for (Drink drink : order.getDrinks()) {
                 stringBuilder.append(drink.getDetails()).append(" $").append(String.format("%.2f", drink.getPrice())).append("\n ");
+
             }
         }
         if(!order.getChips().isEmpty()){
@@ -53,20 +54,22 @@ public class Receipt {
         }
         stringBuilder.append(" \n Total: $").append(String.format("%.2f", order.calculateTotal()));
         stringBuilder.append("\n Thanks for shooping at Singh's Sandies");
-        stringBuilder.append("\n time: " ).append(time.format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")));
+        stringBuilder.append("\n Date: " ).append(time.format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")));
 
         return stringBuilder.toString();
     }
     public void saveReceipt() throws IOException{
         int fileCount = 1;
         String uniqueFile = file;
-        File receiptFile = new File("receipts",uniqueFile);
-        while (receiptFile.exists()){
-            uniqueFile = String.format("%s_%d.txt",file.replace(".txt"," "),fileCount);
-            receiptFile = new File("receipts", uniqueFile);
-            fileCount ++;
+
+        File receiptFile = new File(uniqueFile);
+        while (receiptFile.exists()) {
+            uniqueFile = String.format("%s_%d.txt", file.replace(".txt", ""), fileCount);
+            receiptFile = new File(uniqueFile);
+            fileCount++;
         }
-        try(FileWriter fileWriter = new FileWriter(receiptFile)){
+
+        try (FileWriter fileWriter = new FileWriter(receiptFile)) {
             fileWriter.write(generateReceipt());
         }
         }

@@ -75,6 +75,7 @@ public class UserInterface {
                     break;
                 case 3:
                     currentOrder.addChips(getChip());
+                    break;
                 case 4:
                     Receipt receipt = new Receipt(currentOrder);
                     try {
@@ -171,12 +172,13 @@ public class UserInterface {
     public Drink getDrink(){
         System.out.println("Drink Selection:");
         System.out.println("Select Drink of choice");
+
         for (int i = 0; i < Drink.drinkFlavors.size(); i++) {
             System.out.println((i+1)+ " " + Drink.drinkFlavors.get(i));
         }
         String drinkType = scanner.nextLine().toLowerCase();
 
-        System.out.println("Choose the size of your drink: small, medium, large:");
+        System.out.println("Select the size of your drink: small, medium, large:");
         String drinkSize = scanner.nextLine().toLowerCase();
         return new Drink(drinkType,drinkSize);
     }
@@ -189,7 +191,7 @@ public class UserInterface {
     public List<Toppings> getToppings(List<String> types, String toppingType, double price){
         List<Toppings> toppings = new ArrayList<>();
         while (true) {
-            System.out.println("\n Choose your " + toppingType );
+            System.out.println("\n Choose your " + toppingType + " 0 to finish adding toppings" );
             for (int i = 0; i < types.size(); i++) {
                 System.out.println((i + 1) + ". " + types.get(i));
             }
@@ -214,15 +216,12 @@ public class UserInterface {
             if (toppingType.equalsIgnoreCase("meat")) {
                 topping = new Meat(toppingName, isExtra);
                 toppings.add(topping);
-                break;
             } else if (toppingType.equalsIgnoreCase("cheese")) {
                 topping = new Cheese(toppingName, isExtra);
                 toppings.add(topping);
-                break;
             } else {
                 topping = new RegularToppings(toppingName,0.0);
                 toppings.add(topping);
-                break;
 
             }
 

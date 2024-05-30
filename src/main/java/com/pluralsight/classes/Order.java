@@ -45,7 +45,7 @@ public class Order {
 
     }
     public double calculateTotal(){
-
+        orderTotal = 0.0;
         for (Sandwich sandwich : sandwiches) {
             orderTotal += sandwich.getPrice();
         }
