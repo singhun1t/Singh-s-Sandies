@@ -61,7 +61,7 @@ public class UserInterface {
             System.out.println("2. Add Drink");
             System.out.println("3. Add Chips");
             System.out.println("4. Checkout");
-            System.out.println("Cancel and exit");
+            System.out.println("0. Cancel and exit");
 
             int userChoice = scanner.nextInt();
             scanner.nextLine();
