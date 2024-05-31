@@ -23,13 +23,7 @@ public class Drink implements Orderable {
         this.price = calculatePrice(size);
     }
 
-    public String getFlavor() {
-        return flavor;
-    }
 
-    public String getSize() {
-        return size;
-    }
 
     public String getDetails(){
         return String.format("%s %s", size, flavor);

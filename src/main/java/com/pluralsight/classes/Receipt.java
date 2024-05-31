@@ -77,6 +77,8 @@ public class Receipt {
 
         try (FileWriter fileWriter = new FileWriter(receiptFile)) {
             fileWriter.write(generateReceipt());
+        }catch (IOException e){
+            System.out.println("File unable to be written");
         }
         }
 

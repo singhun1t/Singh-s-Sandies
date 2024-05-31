@@ -12,13 +12,7 @@ public abstract class Toppings {
 
     public abstract double getPricebySize(String size);
 
-    public double getPrice() {
-        return price;
-    }
 
-    public String getName() {
-        return name;
-    }
 
     @Override
     public String toString() {

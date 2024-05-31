@@ -100,6 +100,7 @@ public class UserInterface {
             System.out.println("Your order is empty.");
             return;
         }
+
         if (!sandwiches.isEmpty()) {
             System.out.println("Sandwiches:");
             for (Sandwich sandwich : sandwiches) {

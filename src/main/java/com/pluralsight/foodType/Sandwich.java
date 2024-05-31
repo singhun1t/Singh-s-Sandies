@@ -27,21 +27,10 @@ public class Sandwich implements Orderable {
         this.isToasted = isToasted;
     }
 
-    public String getSize() {
-        return size;
-    }
 
-    public String getBreadType() {
-        return breadType;
-    }
 
-    public List<Toppings> getToppings() {
-        return toppings;
-    }
 
-    public boolean isToasted() {
-        return isToasted;
-    }
+
 
 
     public String getDetails(){
