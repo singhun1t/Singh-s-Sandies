@@ -1,4 +1,4 @@
-# Financial Tracker
+# SinghSandies
 
 ## Description of the Project
 SinghSandies is a program that allows for Users to shop at SinghSandies sandwich shop. They can construct a sandwich with various types of toppings as well as chips or a drink.
