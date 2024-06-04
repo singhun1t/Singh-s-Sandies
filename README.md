@@ -13,6 +13,10 @@ SinghSandies is a program that allows for Users to shop at SinghSandies sandwich
 - As a user, I want my order to be able to check out my order
 - As a user, I should be provided a Receipt with my order along with totalprice
 
+## Class Diagram:
+
+[UML class diagram.pdf](https://github.com/user-attachments/files/15568632/UML.class.diagram.pdf)
+
 
 
 ### Prerequisites
